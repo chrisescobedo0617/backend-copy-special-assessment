@@ -31,7 +31,8 @@ def get_special_paths(dirname):
 
 
 def copy_to(path_list, dest_dir):
-    """Given a list of file paths, copies those files into the given directory."""
+    """Given a list of file paths, copies those
+    files into the given directory."""
     if not os.path.exists(dest_dir):
         os.makedirs(dest_dir)
     else:
@@ -42,7 +43,8 @@ def copy_to(path_list, dest_dir):
 
 
 def zip_to(path_list, dest_zip):
-    """Given a list of file paths, zip those files up into the given zip path."""
+    """Given a list of file paths,
+    zip those files up into the given zip path."""
     print("Command I'm going to do:")
     print(f"zip -j {dest_zip} {' '.join(path_list)}")
     cmd = ['zip', '-j', dest_zip]
@@ -81,8 +83,6 @@ def main(args):
         zip_to(special_files, ns.tozip)
     if not ns.tozip and not ns.todir:
         print('\n'.join(special_files))
-
-
 
 
 if __name__ == "__main__":
